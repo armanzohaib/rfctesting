@@ -37,8 +37,8 @@ export default function Landing() {
     let interval: NodeJS.Timeout;
     if (mining) {
       interval = setInterval(() => {
-        setRfcValue((prev: any) => prev + ghs * 1e-10);
-      }, 1000);
+        setRfcValue((prev) => prev + ghs * 1e-10);
+      }, 1); // Update every 100 milliseconds
     }
     return () => clearInterval(interval);
   }, [mining, ghs]);
@@ -72,10 +72,37 @@ export default function Landing() {
     }
   };
 
+  // const [rfcValue, setRfcValue] = useState(0.0000000001);
+  // const [ghs, setGhs] = useState(2);
+
+  // useEffect(() => {
+  //   if (user) setMining(user?.startMining);
+  // }, [user]);
+
+  // useEffect(() => {
+  //   let interval: NodeJS.Timeout;
+  //   if (mining) {
+  //     interval = setInterval(() => {
+  //       setRfcValue((prev) => prev + ghs * 1e-10);
+  //     }, 1);
+  //   }
+  //   return () => clearInterval(interval);
+  // }, [mining, ghs]);
+
+  // const startMining = async () => {
+  //   try {
+  //     setMining(true);
+  //     const response = await userService.startMining();
+  //     dispatch(updateStartMining());
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   return (
     <div className=" flex flex-col items-center justify-center">
       <Wallet />
-      <div onClick={spinWheel} className="relative">
+      <div className="relative">
         <ImageComponent
           src="/assets/images/Spin.svg"
           figClassName="py-5"
@@ -85,7 +112,7 @@ export default function Landing() {
           alt=""
           priority
         />
-        <div>
+        <div onClick={spinWheel}>
           <ImageComponent
             src="/assets/images/rfc.svg"
             fill

@@ -4,46 +4,46 @@ import Modal from "@/components/common/Modal";
 import WalletPopup from "@/components/common/Modal/components/WalletPopup";
 import React, { useEffect, useState } from "react";
 // import WebApp from "@twa-dev/sdk";
-import { HttpService } from "@/services/base.service";
-import { authService } from "@/services/auth.telegram";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUpdate, selectUserData } from "@/app/redux/slices/userSlice";
+// import { HttpService } from "@/services/base.service";
+// import { authService } from "@/services/auth.telegram";
+// import { useDispatch, useSelector } from "react-redux";
+// import { loginUpdate, selectUserData } from "@/app/redux/slices/userSlice";
 
-declare global {
-  interface Window {
-    Telegram: any;
-  }
-}
+// declare global {
+//   interface Window {
+//     Telegram: any;
+//   }
+// }
 
 export default function Wallet() {
   const [popup, setPopup] = useState(false);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const user = useSelector(selectUserData);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (window.Telegram.WebApp.initData && !user) {
-        fetchUser(window.Telegram.WebApp.initData);
-      }
-    }
-  }, []);
+  // const user = useSelector(selectUserData);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     if (window.Telegram.WebApp.initData && !user) {
+  //       fetchUser(window.Telegram.WebApp.initData);
+  //     }
+  //   }
+  // }, []);
 
-  /**
-   * authorize user from telegram using out backend
-   * @param userData
-   */
-  const fetchUser = async (userData: any) => {
-    try {
-      const user = await authService.authenticateUser({ userData });
-      if (user?.data.success) {
-        dispatch(loginUpdate(user?.data.user));
-        if (user?.data.user.access_token)
-          HttpService.setToken(user?.data.user.access_token);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // /**
+  //  * authorize user from telegram using out backend
+  //  * @param userData
+  //  */
+  // const fetchUser = async (userData: any) => {
+  //   try {
+  //     const user = await authService.authenticateUser({ userData });
+  //     if (user?.data.success) {
+  //       dispatch(loginUpdate(user?.data.user));
+  //       if (user?.data.user.access_token)
+  //         HttpService.setToken(user?.data.user.access_token);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <>
