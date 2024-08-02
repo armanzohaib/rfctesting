@@ -78,7 +78,7 @@ export default function Friends() {
         `.trim(); // Removing leading and trailing whitespace and newlines
 
         const encodedMessage = encodeURIComponent(message);
-        const telegramLink = `https://t.me/share/url?url=https://t.me/RFC_App_bot?start=${user?.telegramId}&text=${encodedMessage}`;
+        const telegramLink = `https://t.me/share/url?url=https://t.me/rfcappbot?start=${user?.telegramId}&text=${encodedMessage}`;
         webApp.openTelegramLink(telegramLink);
 
         // will be used to copy the link to the bot
