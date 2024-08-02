@@ -25,7 +25,7 @@ export default function Friends() {
   const user = useSelector(selectUserData);
 
   const [inviteLink, setInviteLink] = useState(
-    `https://t.me/RFC_App_bot?start=${user?.telegramId}`
+    `https://t.me/rfcappbot?start=${user?.telegramId}`
   );
 
   const copyToClipboard = async () => {
