@@ -3,8 +3,6 @@ import React from "react";
 import { createConfig, WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import "@rainbow-me/rainbowkit/styles.css";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { useState } from "react";
 import ChainContextProvider from "@/context/ChainContextProvider";
 import { store } from "@/app/redux/store";
@@ -113,10 +111,8 @@ const AppProvider = ({ children }: React.PropsWithChildren) => {
         <Provider store={store}>
           <WagmiProvider config={config}>
             <QueryClientProvider client={client}>
-              <RainbowKitProvider>
                 <ChainContextProvider>{children}</ChainContextProvider>
                 <ReactQueryDevtools initialIsOpen={false} />
-              </RainbowKitProvider>
             </QueryClientProvider>
           </WagmiProvider>
         </Provider>

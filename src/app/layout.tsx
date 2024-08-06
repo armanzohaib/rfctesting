@@ -46,7 +46,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={cn(
-          "min-h-screen font-display bg-background text-primary antialiased",
+          "min-h-screen font-display bg-background text-primary antialiased AtScrollHide",
           museo.variable
         )}
       >

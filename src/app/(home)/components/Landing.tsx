@@ -37,8 +37,8 @@ export default function Landing() {
     let interval: NodeJS.Timeout;
     if (mining) {
       interval = setInterval(() => {
-        setRfcValue((prev) => prev + ghs * 1e-10);
-      }, 1); // Update every 100 milliseconds
+        setRfcValue((prev: any) => prev + ghs * 1e-10);
+      }, 1000);
     }
     return () => clearInterval(interval);
   }, [mining, ghs]);
@@ -72,39 +72,12 @@ export default function Landing() {
     }
   };
 
-  // const [rfcValue, setRfcValue] = useState(0.0000000001);
-  // const [ghs, setGhs] = useState(2);
-
-  // useEffect(() => {
-  //   if (user) setMining(user?.startMining);
-  // }, [user]);
-
-  // useEffect(() => {
-  //   let interval: NodeJS.Timeout;
-  //   if (mining) {
-  //     interval = setInterval(() => {
-  //       setRfcValue((prev) => prev + ghs * 1e-10);
-  //     }, 1);
-  //   }
-  //   return () => clearInterval(interval);
-  // }, [mining, ghs]);
-
-  // const startMining = async () => {
-  //   try {
-  //     setMining(true);
-  //     const response = await userService.startMining();
-  //     dispatch(updateStartMining());
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <div className=" flex flex-col items-center justify-center">
       <Wallet />
-      <div className="relative">
+      <div onClick={spinWheel} className="relative">
         <ImageComponent
-          src="/assets/images/Spin.svg"
+          src="/assets/images/fan2.svg"
           figClassName="py-5"
           className={`${mining ? "rotate wheel" : ""}`}
           width={180}
@@ -112,9 +85,9 @@ export default function Landing() {
           alt=""
           priority
         />
-        <div onClick={spinWheel}>
+        <div>
           <ImageComponent
-            src="/assets/images/rfc.svg"
+            src="/assets/images/rfc1.svg"
             fill
             figClassName={`${
               mining ? "wheelcenter" : ""
@@ -136,7 +109,7 @@ export default function Landing() {
         </span>
       </p>
       {mining ? (
-        <div className="flex items-center gap-2 w-full ">
+        <div className="flex items-center gap-2 w-full">
           <Button
             className="w-full flex gap-2 text-black hover:text-primary"
             onClick={() => {

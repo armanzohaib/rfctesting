@@ -23,7 +23,7 @@ const BoostPopup = (props: Props) => {
           days.{" "}
         </p>
         <div className="mt-5 flex justify-center items-center text-primary gap-2">
-          <h1 className="h1 font-bold text-white tracking-wider">100 GH/s</h1>
+          <h1 className="h1 font-bold text-white tracking-wider text-2xl">100 GH/s</h1>
           <Lightning />
         </div>
 
@@ -42,7 +42,7 @@ const BoostPopup = (props: Props) => {
           <Input
             name="input"
             placeholder="10"
-            className="placeholder:!text-white font-bold text-base text-white"
+            className="placeholder:!text-white font-bold text-base text-white !py-3.5"
             AddIcon={<RFCsm className="w-[30px] h-[29px]" />}
           />
         </div>
@@ -50,9 +50,9 @@ const BoostPopup = (props: Props) => {
           <p className="">Minimum Amount: 1</p>
           <RFCsm className="w-[18px] h-[18px]" />
         </div>
-        <Button className="w-full !rounded-[20px] mt-5">Add</Button>
+        <Button className="w-full !rounded-lg mt-5 !h-12">Add</Button>
 
-        <Button className="text-white w-full !rounded-[20px] !bg-[#1C2534] border-none mt-5">
+        <Button className="text-white w-full !rounded-lg !h-12 !bg-[#1C2534] border-none mt-5">
           Back
         </Button>
       </div>

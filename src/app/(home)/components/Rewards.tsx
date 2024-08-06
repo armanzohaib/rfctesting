@@ -9,7 +9,7 @@ interface IProps {
 
 const Rewards = ({ level, rfc, mh }: IProps) => {
   return (
-    <div className="rounded-[20px] bg-[#1C2534]/60 p-3 flex gap-2.5 justify-between items-center">
+    <div className="rounded-[20px] bg-[#1C2534]/60 px-3 py-2 flex gap-2.5 justify-between items-center">
       <div className=" flex flex-col gap-2.5 items-center justify-center text-base font-medium">
         <h3 className="text-[#B0B0B0]">Level</h3>
         <h2 className="text-white">{level}</h2>
@@ -35,8 +35,8 @@ const Rewards = ({ level, rfc, mh }: IProps) => {
         <ImageComponent
           src="/assets/images/Lightning.svg"
           figClassName=""
-          width={27}
-          height={43}
+          width={22}
+          height={35}
           alt=""
         />
       </div>

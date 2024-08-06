@@ -18,11 +18,9 @@ const ClaimPopUp = (props: Props) => {
         Minimum claim amount is 0.015 RFC
       </p>
 
-      <Button className="w-full !rounded-[20px] mt-5">
-        Claim
-      </Button>
+      <Button className="w-full !rounded-lg mt-5 !h-12">Claim</Button>
 
-      <Button className="text-white w-full !rounded-[20px] !bg-[#1C2534] border-none mt-5">
+      <Button className="text-white w-full !rounded-lg !bg-[#1C2534] border-none mt-5 !h-12">
         Not Yet
       </Button>
     </div>

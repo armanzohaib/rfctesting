@@ -25,7 +25,7 @@ export default function Friends() {
   const user = useSelector(selectUserData);
 
   const [inviteLink, setInviteLink] = useState(
-    `https://t.me/rfcappbot?start=${user?.telegramId}`
+    `https://t.me/RFC_App_bot?start=${user?.telegramId}`
   );
 
   const copyToClipboard = async () => {
@@ -78,7 +78,7 @@ export default function Friends() {
         `.trim(); // Removing leading and trailing whitespace and newlines
 
         const encodedMessage = encodeURIComponent(message);
-        const telegramLink = `https://t.me/share/url?url=https://t.me/rfcappbot?start=${user?.telegramId}&text=${encodedMessage}`;
+        const telegramLink = `https://t.me/share/url?url=https://t.me/RFC_App_bot?start=${user?.telegramId}&text=${encodedMessage}`;
         webApp.openTelegramLink(telegramLink);
 
         // will be used to copy the link to the bot
@@ -140,7 +140,7 @@ export default function Friends() {
           <Rewards level={3} rfc={15} mh={5} />
           <Button
             onClick={() => setPopup(true)}
-            className="!rounded-[20px] w-full"
+            className="!rounded-lg !py-3 w-full !h-12"
           >
             Learn More
           </Button>
@@ -151,6 +151,6 @@ export default function Friends() {
       </>
     </>
   ) : (
-    <FriendList />
+    <FriendList setFriends={setFriends} />
   );
 }

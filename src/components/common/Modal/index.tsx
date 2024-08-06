@@ -23,7 +23,7 @@ function Modal({ show, hide, children, className }: IProps) {
             className="fixed inset-0 bg-black/30"
           />
           <div
-            className="fixed inset-0 flex w-screen items-center justify-center p-4 bd"
+            className="fixed inset-0 flex w-screen items-center justify-center p-4"
             onClick={hide}
           >
             <DialogPanel

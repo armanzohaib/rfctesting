@@ -1,3 +1,4 @@
+"use client";
 import { selectUserData } from "@/app/redux/slices/userSlice";
 import { Button } from "@/components/common";
 import {
@@ -18,16 +19,20 @@ import {
 import React from "react";
 import { useSelector } from "react-redux";
 import { useAccount } from "wagmi";
+import { showToast } from "./Alert";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 export default function More() {
   const userData = useSelector(selectUserData);
   const { isConnected } = useAccount({});
-
-
-
-  console.log(`IS CONNECTED =>`, isConnected);
+  
   const children = (
-    <div    className="w-full flex gap-2 text-black hover:text-primary" data-testid='exampleChild'>Connect</div>
+    <div
+      className="w-full flex gap-2 text-black hover:text-primary"
+      data-testid="exampleChild"
+    >
+      Connect
+    </div>
   ) as React.ReactElement;
   return (
     <>
@@ -45,27 +50,18 @@ export default function More() {
             width={60}
             height={60}
             alt=""
-            
           />
         </div>
       </div>
       <div className="py-3 border-borderColor border-y px-5">
-        {/* <DynamicWidget
-          variant="modal" */}
-          <DynamicConnectButton>{children}</DynamicConnectButton>
-
-          {/* // innerButtonComponent={ */}
-          {/* //   <Button className="AtConnect" */}
-          
-          {/* //   >
-          //     Connect Wallet</Button>
-          // }
-          // buttonClassName="w-full flex gap-2 text-black hover:text-primary"
-        // /> */}
-        {/* <Button className="w-full flex gap-2 text-black hover:text-primary">
-          <RFCsm />
-          Connect Wallet
-        </Button> */}
+        <DynamicWidget
+          variant="modal"
+          innerButtonComponent={
+            <Button className="AtConnect">Connect Wallet</Button>
+          }
+          buttonClassName="!bg-primary !text-[#333333] font-bold"
+        />
+        {/* <DynamicConnectButton>{children}</DynamicConnectButton> */}
       </div>
       <div className="mt-4 px-5 flex flex-col gap-1.5 pb-">
         <div className="flex justify-between bg-[#1C2534] rounded-[20px] py-4 px-4">
@@ -74,7 +70,12 @@ export default function More() {
             <h3 className="text-base font-medium">My ID</h3>
           </div>
           <div className="flex items-center gap-2.5 text-[#B0B0B0]">
-            <Clipboard />
+            <CopyToClipboard
+              text={userData?.telegramId}
+              onCopy={() => showToast("Successfully copied!")}
+            >
+              <Clipboard className="text-[#B0B0B0] w-6 h-6" />
+            </CopyToClipboard>
             <p className="text-sm font-light">{userData?.telegramId}</p>
           </div>
         </div>

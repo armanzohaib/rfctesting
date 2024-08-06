@@ -5,6 +5,7 @@ class UserService extends HttpService {
 
   getUserDetails = (): Promise<any> => this.get(`${this.prefix}/`);
   startMining = (): Promise<any> => this.get(`${this.prefix}/start-mining`);
+  getFriendsList = (): Promise<any> => this.get(`${this.prefix}/friends`);
 }
 
 export const userService = new UserService();

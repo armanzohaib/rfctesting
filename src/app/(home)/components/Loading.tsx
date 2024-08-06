@@ -6,7 +6,7 @@ const Loading = () => {
     <div className=" flex flex-col items-center gap-12 justify-center min-h-[calc(100vh-150px)]">
       <div className="relative">
         <ImageComponent
-          src="/assets/images/Spin.svg"
+          src="/assets/images/fan2.svg"
           figClassName=""
           className="rotate"
           width={210}
@@ -15,7 +15,7 @@ const Loading = () => {
           priority
         />
         <ImageComponent
-          src="/assets/images/rfc.svg"
+          src="/assets/images/rfc1.svg"
           fill
           figClassName="h-14 w-14 !absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
           alt=""

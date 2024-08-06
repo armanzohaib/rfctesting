@@ -9,9 +9,9 @@ import {
 
 const baseStyles: BsProps = {
   solid:
-    "inline-flex justify-center items-center h-16 rounded-full border-2 whitespace-nowrap leading-none font-black disabled:cursor-not-allowed disabled:text-black",
+    "inline-flex justify-center items-center h-14 rounded-full border-2 whitespace-nowrap leading-none font-black disabled:cursor-not-allowed disabled:text-black",
   outline:
-    "inline-flex justify-center items-center h-16 outline-none rounded-full whitespace-nowrap leading-none font-black border-2 disabled:cursor-not-allowed disabled:text-black",
+    "inline-flex justify-center items-center h-14 outline-none rounded-full whitespace-nowrap leading-none font-black border-2 disabled:cursor-not-allowed disabled:text-black",
 };
 
 const variantStyles: VsProps = {
@@ -29,7 +29,7 @@ const variantStyles: VsProps = {
 
 const sizeStyles: SsProps = {
   sm: "px-2.5 py-1 text-xs",
-  md: "px-9 py-4 text-base",
+  md: "px-9 py-3 text-base",
   lg: "px-7 py-2 text-base",
 };
 const Button = ({

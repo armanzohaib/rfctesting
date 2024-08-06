@@ -89,6 +89,8 @@
 
 .AtScrollHide::-webkit-scrollbar {
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .AtScrollHide {
@@ -96,6 +98,14 @@
   /* IE and Edge */
   scrollbar-width: none !important;
   /* Firefox */
+}
+.hideScrollbar::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.hideScrollbar {
+  scrollbar-width: none !important;
 }
 
 .bg {
@@ -122,13 +132,14 @@
     opacity: 1;
   }
 }
-.AtCenterImg{
+.AtCenterImg {
   margin-top: -28px;
   margin-left: -28px;
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -151,4 +162,3 @@
 .delay-400 {
   animation-delay: 0.4s;
 }
-

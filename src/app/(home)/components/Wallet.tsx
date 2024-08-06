@@ -1,8 +1,11 @@
 "use client";
+import { selectAccessToken } from "@/app/redux/slices/userSlice";
 import { RFC, WalletIcon } from "@/components/common/Icons";
 import Modal from "@/components/common/Modal";
 import WalletPopup from "@/components/common/Modal/components/WalletPopup";
+import { HttpService } from "@/services/base.service";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 // import WebApp from "@twa-dev/sdk";
 // import { HttpService } from "@/services/base.service";
 // import { authService } from "@/services/auth.telegram";
@@ -19,6 +22,7 @@ export default function Wallet() {
   const [popup, setPopup] = useState(false);
   // const dispatch = useDispatch();
 
+  const accessToken = useSelector(selectAccessToken);
   // const user = useSelector(selectUserData);
   // useEffect(() => {
   //   if (typeof window !== "undefined") {
@@ -44,6 +48,13 @@ export default function Wallet() {
   //     console.log(error);
   //   }
   // };
+
+  /**
+   * Set access token in HTTP service
+   */
+  useEffect(() => {
+    if (accessToken) HttpService.setToken(accessToken);
+  }, []);
 
   return (
     <>

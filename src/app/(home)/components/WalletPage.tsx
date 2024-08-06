@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Wallet from "./Wallet";
 import { Button } from "@/components/common";
